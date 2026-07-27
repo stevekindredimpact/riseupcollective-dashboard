@@ -1,0 +1,387 @@
+{
+  "generatedAt": "2026-07-26T23:37:21.500Z",
+  "settings": {
+    "orgName": "Rise Up Healing Collective",
+    "fiscalYear": "2026",
+    "executiveDirector": "Sidney François-Friis & Emmaline Jones",
+    "standardRate": 31.8,
+    "professionalRate": 47,
+    "grantProgramRate": 35
+  },
+  "summary": {
+    "totalVolunteers": 2,
+    "totalHours": 14.5,
+    "totalVolValue": 609.5,
+    "totalInKind": 0,
+    "cashGrants": 5000,
+    "totalProgramValue": 5609.5,
+    "leverageRatio": 1.1,
+    "totalParticipants": 540,
+    "totalContacts": 7
+  },
+  "recentEvents": [
+    {
+      "id": "P005",
+      "name": "Belize 2026 — Pre-Departure Sessions",
+      "date": "2026-08-01",
+      "area": "Belize Cultural Immersion",
+      "location": "Multiple sites — Chicago",
+      "partners": "Rise Up Partners",
+      "youthServed": 20,
+      "adults": 5,
+      "volHours": 0,
+      "totalValue": 0
+    },
+    {
+      "id": "P002",
+      "name": "Race Against Gun Violence — June 4",
+      "date": "2026-06-04",
+      "area": "Community Events / Youth",
+      "location": "Grant Park, Chicago",
+      "partners": "RAGV Organizers / RunSignUp",
+      "youthServed": 15,
+      "adults": 300,
+      "volHours": 0,
+      "totalValue": 0
+    },
+    {
+      "id": "P001",
+      "name": "Obama Center — MBK Breathwork",
+      "date": "2026-05-15",
+      "area": "Community Wellness / MBK",
+      "location": "Obama Presidential Center, Hyde Park",
+      "partners": "My Brother's Keeper Alliance",
+      "youthServed": 85,
+      "adults": 40,
+      "volHours": 0,
+      "totalValue": 0
+    },
+    {
+      "id": "P004",
+      "name": "Rich Rootz Peace Circle — Englewood",
+      "date": "2026-05-01",
+      "area": "Restorative Justice / Peace Circles",
+      "location": "Englewood Community Site, Chicago",
+      "partners": "Rich Rootz / Local Partners",
+      "youthServed": 35,
+      "adults": 10,
+      "volHours": 0,
+      "totalValue": 0
+    },
+    {
+      "id": "P003",
+      "name": "Dominican University Wellness Program",
+      "date": "2026-04-01",
+      "area": "Yogaletics Programming",
+      "location": "Dominican University, River Forest",
+      "partners": "Dominican University",
+      "youthServed": 25,
+      "adults": 5,
+      "volHours": 0,
+      "totalValue": 0
+    }
+  ],
+  "topVolunteers": [
+    {
+      "name": "Sidney François-Friis",
+      "hours": 10.5,
+      "value": 421.5,
+      "type": "Individual"
+    },
+    {
+      "name": "Emmaline Jones",
+      "hours": 4,
+      "value": 188,
+      "type": "Individual"
+    }
+  ],
+  "demographics": {
+    "raceEthnicity": {
+      "Black / African American": 4,
+      "Hispanic / Latino": 1
+    },
+    "gender": {
+      "Male": 3,
+      "Female": 2
+    },
+    "ageRange": {
+      "25–34": 2,
+      "35–44": 2,
+      "Under 18": 1
+    },
+    "bipocCount": 5,
+    "bipocPct": 100,
+    "demographicResponseRate": 71.4,
+    "note": "Aggregate only — no personally identifiable information"
+  },
+  "historical": {
+    "sinceYear": 2020,
+    "totalEvents": 140,
+    "totalAttendance": 15370,
+    "directAttendance": 4970,
+    "reachAttendance": 10400,
+    "coachingClients": 40,
+    "distinctLocations": 63,
+    "byYear": [
+      {
+        "year": 2020,
+        "events": 21,
+        "attendance": 951
+      },
+      {
+        "year": 2021,
+        "events": 16,
+        "attendance": 990
+      },
+      {
+        "year": 2022,
+        "events": 16,
+        "attendance": 547
+      },
+      {
+        "year": 2023,
+        "events": 19,
+        "attendance": 1715
+      },
+      {
+        "year": 2024,
+        "events": 35,
+        "attendance": 1707
+      },
+      {
+        "year": 2025,
+        "events": 32,
+        "attendance": 9440
+      },
+      {
+        "year": 2026,
+        "events": 0,
+        "attendance": 0
+      }
+    ],
+    "cumulative": [
+      {
+        "year": 2020,
+        "attendance": 951,
+        "cumulative": 951
+      },
+      {
+        "year": 2021,
+        "attendance": 990,
+        "cumulative": 1941
+      },
+      {
+        "year": 2022,
+        "attendance": 547,
+        "cumulative": 2488
+      },
+      {
+        "year": 2023,
+        "attendance": 1715,
+        "cumulative": 4203
+      },
+      {
+        "year": 2024,
+        "attendance": 1707,
+        "cumulative": 5910
+      },
+      {
+        "year": 2025,
+        "attendance": 9440,
+        "cumulative": 15350
+      },
+      {
+        "year": 2026,
+        "attendance": 0,
+        "cumulative": 15350
+      }
+    ],
+    "byCategory": [
+      {
+        "category": "Community",
+        "events": 93,
+        "attendance": 5052
+      },
+      {
+        "category": "Youth",
+        "events": 18,
+        "attendance": 431
+      },
+      {
+        "category": "High School",
+        "events": 9,
+        "attendance": 8945
+      },
+      {
+        "category": "University",
+        "events": 7,
+        "attendance": 160
+      },
+      {
+        "category": "Senior",
+        "events": 4,
+        "attendance": 135
+      },
+      {
+        "category": "Speaking",
+        "events": 5,
+        "attendance": 550
+      },
+      {
+        "category": "International",
+        "events": 4,
+        "attendance": 97
+      }
+    ],
+    "directVsReach": {
+      "direct": 4970,
+      "reach": 10400,
+      "reachEvents": [
+        {
+          "name": "Yogaletics & Schurz",
+          "attendance": 3000,
+          "year": 2025,
+          "location": "Schurz HS"
+        },
+        {
+          "name": "Youth Summit",
+          "attendance": 2500,
+          "year": 2025,
+          "location": "Tinley Park Convention Center"
+        },
+        {
+          "name": "youth step up",
+          "attendance": 2500,
+          "year": 2025,
+          "location": "Prairie Hill junior High"
+        },
+        {
+          "name": "Holiday Giveback",
+          "attendance": 800,
+          "year": 2023,
+          "location": "Proviso East"
+        },
+        {
+          "name": "Holisitc Wellness Festival",
+          "attendance": 600,
+          "year": 2024,
+          "location": "Maywood"
+        },
+        {
+          "name": "Holisitc Wellness Festival",
+          "attendance": 500,
+          "year": 2023,
+          "location": "Maywood"
+        },
+        {
+          "name": "HWF",
+          "attendance": 500,
+          "year": 2025,
+          "location": "Proviso"
+        }
+      ]
+    },
+    "topLocations": [
+      {
+        "location": "Schurz HS",
+        "attendance": 3000
+      },
+      {
+        "location": "Tinley Park Convention Center",
+        "attendance": 2500
+      },
+      {
+        "location": "Prairie Hill junior High",
+        "attendance": 2500
+      },
+      {
+        "location": "Jones prep",
+        "attendance": 1510
+      },
+      {
+        "location": "Maywood",
+        "attendance": 1150
+      },
+      {
+        "location": "Proviso East",
+        "attendance": 800
+      },
+      {
+        "location": "Proviso",
+        "attendance": 500
+      },
+      {
+        "location": "Jackson Park",
+        "attendance": 280
+      }
+    ],
+    "byEntity": [],
+    "riseUpOnly": {
+      "events": 0,
+      "attendance": 0,
+      "firstYear": null,
+      "note": "Rise Up Healing Collective was founded in 2023. Any row dated earlier belongs to Yogaletics or Rich Rootz and is excluded here."
+    },
+    "dataQuality": {
+      "rowsWithoutEntity": 140,
+      "attendanceWithoutEntity": 15370,
+      "attendanceWithoutYear": 20,
+      "note": "WARNING: 20 attendance is logged with no year, so the year chart will not sum to the lifetime headline."
+    },
+    "note": "Lifetime ecosystem reach 2020–present across Rise Up Healing Collective, Yogaletics, and Rich Rootz. Reach = single events >= 300 (festivals/school assemblies); Direct = recurring class/circle programming."
+  },
+  "riseUpMetrics": {
+    "entity": "Rise Up (501c3)",
+    "lifetime": {
+      "totalYouth": 0,
+      "totalAdults": 0,
+      "schoolsEngaged": 0,
+      "totalEvents": 0,
+      "workshops": 0,
+      "totalHours": 14.5
+    },
+    "byYear": [
+      {
+        "year": 2023,
+        "totalYouth": 0,
+        "totalAdults": 0,
+        "schoolsEngaged": 0,
+        "totalEvents": 0,
+        "workshops": 0,
+        "totalHours": 0
+      },
+      {
+        "year": 2024,
+        "totalYouth": 0,
+        "totalAdults": 0,
+        "schoolsEngaged": 0,
+        "totalEvents": 0,
+        "workshops": 0,
+        "totalHours": 0
+      },
+      {
+        "year": 2025,
+        "totalYouth": 0,
+        "totalAdults": 0,
+        "schoolsEngaged": 0,
+        "totalEvents": 0,
+        "workshops": 0,
+        "totalHours": 0
+      },
+      {
+        "year": 2026,
+        "totalYouth": 0,
+        "totalAdults": 0,
+        "schoolsEngaged": 0,
+        "totalEvents": 0,
+        "workshops": 0,
+        "totalHours": 14.5
+      }
+    ],
+    "dataQuality": {
+      "rowsSkippedNoEntity": 5,
+      "note": "WARNING: 5 event row(s) have no Entity value and were excluded. Assign an Entity in PROGRAMS_EVENTS so they count."
+    },
+    "note": "The six standard metrics for Rise Up Healing Collective only. Rows marked Yogaletics LLC or Rich Rootz LLC are excluded by design."
+  }
+}

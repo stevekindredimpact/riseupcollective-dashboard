@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rise Up Healing Collective — Lifetime Impact Since 2020</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --forest:#16351A; --forest2:#1E4522; --leaf:#2A642E; --sage:#6E8F5F;
+  --gold:#C8860A; --clay:#B84A2A; --cream:#F3EFE4; --paper:#FBF9F2;
+  --ink:#1A2417; --ink2:#41513C; --line:rgba(22,53,26,.14);
+  --ffd:'Big Shoulders Display',sans-serif; --ffb:'Public Sans',sans-serif; --ffm:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ffb);color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+@media print{body{background:#fff}.noprint{display:none!important}}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(160deg,var(--forest) 0%,var(--forest2) 62%,#24491f 100%);color:var(--cream);padding:54px 0 46px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 88% 8%,rgba(200,134,10,.22),transparent 42%),
+  radial-gradient(circle at 6% 96%,rgba(110,143,95,.20),transparent 48%);pointer-events:none}
+.eyebrow{font-family:var(--ffm);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-family:var(--ffd);font-weight:900;font-size:clamp(40px,7vw,78px);line-height:.94;letter-spacing:-.01em;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--gold);display:block}
+.hero .lede{font-size:clamp(15px,1.8vw,18px);max-width:620px;margin-top:18px;color:rgba(243,239,228,.86)}
+.hero-meta{margin-top:22px;font-family:var(--ffm);font-size:12px;color:rgba(243,239,228,.6)}
+.updated{position:absolute;top:20px;right:22px;font-family:var(--ffm);font-size:11px;color:rgba(243,239,228,.55)}
+
+/* ── STAT STRIP ── */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--cream);border-top:3px solid var(--gold)}
+.stat{padding:22px 18px;border-right:1px solid var(--line);position:relative}
+.stat:last-child{border-right:none}
+.stat .n{font-family:var(--ffd);font-weight:800;font-size:clamp(28px,4.4vw,46px);line-height:1;color:var(--forest)}
+.stat .l{font-family:var(--ffm);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);margin-top:8px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.stat{border-bottom:1px solid var(--line)}}
+
+/* ── SECTIONS ── */
+section{padding:44px 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.sec-num{font-family:var(--ffm);font-size:12px;color:var(--gold);font-weight:600}
+.sec-head h2{font-family:var(--ffd);font-weight:800;font-size:clamp(24px,3.4vw,34px);text-transform:uppercase;letter-spacing:-.01em;color:var(--forest)}
+.sec-sub{color:var(--ink2);max-width:640px;margin-bottom:24px;font-size:14.5px}
+
+/* growth signature */
+.climb-card{background:var(--forest);border-radius:14px;padding:26px 24px 18px;color:var(--cream);position:relative;overflow:hidden}
+.climb-card h3{font-family:var(--ffm);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.climb-card .cap{font-size:13px;color:rgba(243,239,228,.7);margin-bottom:14px}
+.climb-wrap{position:relative;height:300px}
+.grid2{display:grid;grid-template-columns:1.55fr 1fr;gap:22px;align-items:stretch}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.side{display:flex;flex-direction:column;gap:14px}
+.pill{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.pill .n{font-family:var(--ffd);font-weight:800;font-size:32px;color:var(--forest);line-height:1}
+.pill .l{font-family:var(--ffm);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin-top:6px}
+.pill.gold{background:#FBEFCB;border-color:rgba(200,134,10,.4)}
+.pill.gold .n{color:var(--gold)}
+
+.chart-box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px}
+.chart-box h3{font-family:var(--ffm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-bottom:14px}
+.cwrap{position:relative;height:260px}
+
+/* reach explainer */
+.reach{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:680px){.reach{grid-template-columns:1fr}}
+.reach .box{border:1px solid var(--line);border-radius:12px;padding:20px;background:var(--paper)}
+.reach .box.direct{border-left:4px solid var(--leaf)}
+.reach .box.rch{border-left:4px solid var(--gold)}
+.reach .big{font-family:var(--ffd);font-weight:800;font-size:40px;color:var(--forest);line-height:1}
+.reach .box.rch .big{color:var(--gold)}
+.reach h4{font-family:var(--ffm);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin:10px 0 6px}
+.reach p{font-size:13px;color:var(--ink2)}
+.reach ul{margin:10px 0 0 0;list-style:none;font-size:12.5px;color:var(--ink2)}
+.reach li{padding:3px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:10px}
+.reach li b{font-family:var(--ffm);color:var(--forest)}
+
+/* venue list */
+.venues{display:grid;grid-template-columns:repeat(2,1fr);gap:0 30px}
+@media(max-width:680px){.venues{grid-template-columns:1fr}}
+.vrow{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.vrow .bar{flex:1;height:8px;background:var(--cream);border-radius:4px;overflow:hidden}
+.vrow .bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--leaf),var(--gold))}
+.vrow .name{font-size:13px;min-width:150px}
+.vrow .val{font-family:var(--ffm);font-size:12px;color:var(--forest);font-weight:600;min-width:46px;text-align:right}
+
+footer{background:var(--forest);color:rgba(243,239,228,.72);padding:30px 0;font-size:12.5px;font-family:var(--ffm)}
+footer b{color:var(--cream)}
+footer a{color:var(--gold);text-decoration:none}
+.note{font-size:12px;color:var(--ink2);font-style:italic;margin-top:14px;padding:12px 14px;background:var(--cream);border-radius:8px;border-left:3px solid var(--sage)}
+.print-btn{position:fixed;bottom:20px;right:20px;background:var(--gold);color:#1a1300;border:none;border-radius:24px;padding:11px 18px;font-family:var(--ffm);font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+</style>
+</head>
+<body>
+<div class="updated noprint" id="updated"></div>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Rise Up Healing Collective · Lifetime Impact</div>
+    <h1>Six Years of Healing<em id="hero-reach">15,000+ Reached</em></h1>
+    <p class="lede">Since 2020, Yogaletics and Rise Up have carried movement, breathwork, restorative justice, and cultural immersion across Chicago's South and West sides — from park classes to school assemblies to international retreats.</p>
+    <div class="hero-meta" id="hero-span">140 events · 63 venues · 2020–2025</div>
+  </div>
+</header>
+
+<div class="stats" id="statstrip"></div>
+
+<div class="wrap">
+
+<section id="growth">
+  <div class="sec-head"><span class="sec-num">01</span><h2>The Climb</h2></div>
+  <p class="sec-sub">Cumulative people reached, year over year. The line only goes one direction.</p>
+  <div class="grid2">
+    <div class="climb-card">
+      <h3>Cumulative Reach · 2020 → 2025</h3>
+      <div class="cap">Every session, class, circle, and assembly, added together over time.</div>
+      <div class="climb-wrap"><canvas id="climbChart"></canvas></div>
+    </div>
+    <div class="side" id="climbside"></div>
+  </div>
+</section>
+
+<section id="byyear" style="padding-top:8px">
+  <div class="grid2">
+    <div class="chart-box"><h3>People Reached by Year</h3><div class="cwrap"><canvas id="yearChart"></canvas></div></div>
+    <div class="chart-box"><h3>Reach by Program Category</h3><div class="cwrap"><canvas id="catChart"></canvas></div></div>
+  </div>
+</section>
+
+<section id="reach">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Direct vs. Reach</h2></div>
+  <p class="sec-sub">Honest math for funders: recurring, hands-on programming is counted separately from large one-time festival and school-assembly reach.</p>
+  <div class="reach">
+    <div class="box direct">
+      <div class="big" id="direct-n">4,970</div>
+      <h4>Direct Programming</h4>
+      <p>People in recurring yoga classes, peace circles, camps, and coaching — the sustained work.</p>
+    </div>
+    <div class="box rch">
+      <div class="big" id="reach-n">10,400</div>
+      <h4>Festival &amp; Assembly Reach</h4>
+      <p>Single large events (7 of them) where Rise Up led or presented to full-school or festival crowds.</p>
+      <ul id="reach-list"></ul>
+    </div>
+  </div>
+  <div class="note" id="reach-note"></div>
+</section>
+
+<section id="venues">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Where It Happened</h2></div>
+  <p class="sec-sub">Top venues by people reached, out of 63 distinct locations across Chicagoland and beyond.</p>
+  <div class="venues" id="venuelist"></div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>Rise Up Healing Collective</b> — Yogaletics · Rich Rootz · Belize Cultural Immersion<br>
+    Lifetime impact 2020–2025 · <span id="foot-clients"></span> coaching clients served 1:1<br>
+    Data source: Rise Up Volunteer Impact Tracker → HISTORICAL_IMPACT · <a href="https://riseuphc.org">riseuphc.org</a><br>
+    <span id="foot-gen"></span>
+  </div>
+</footer>
+
+<button class="print-btn noprint" onclick="window.print()">Save / Print PDF</button>
+
+<script>
+var EMBEDDED = {"sinceYear":2020,"totalEvents":140,"totalAttendance":15370,"directAttendance":4970,"reachAttendance":10400,"coachingClients":40,"distinctLocations":63,"byYear":[{"year":2020,"events":21,"attendance":951},{"year":2021,"events":16,"attendance":990},{"year":2022,"events":16,"attendance":547},{"year":2023,"events":19,"attendance":1715},{"year":2024,"events":35,"attendance":1707},{"year":2025,"events":32,"attendance":9440}],"cumulative":[{"year":2020,"attendance":951,"cumulative":951},{"year":2021,"attendance":990,"cumulative":1941},{"year":2022,"attendance":547,"cumulative":2488},{"year":2023,"attendance":1715,"cumulative":4203},{"year":2024,"attendance":1707,"cumulative":5910},{"year":2025,"attendance":9440,"cumulative":15350}],"byCategory":[{"category":"Community","events":93,"attendance":5052},{"category":"Youth","events":18,"attendance":431},{"category":"High School","events":9,"attendance":8945},{"category":"University","events":7,"attendance":160},{"category":"Senior","events":4,"attendance":135},{"category":"Speaking","events":5,"attendance":550},{"category":"International","events":4,"attendance":97}],"directVsReach":{"direct":4970,"reach":10400,"reachEvents":[{"name":"Yogaletics & Schurz","attendance":3000,"year":2025,"location":"Schurz HS"},{"name":"Youth Summit","attendance":2500,"year":2025,"location":"Tinley Park Convention Center"},{"name":"youth step up","attendance":2500,"year":2025,"location":"Prairie Hill junior High"},{"name":"Holiday Giveback","attendance":800,"year":2023,"location":"Proviso East"},{"name":"Holisitc Wellness Festival","attendance":600,"year":2024,"location":"Maywood"},{"name":"Holisitc Wellness Festival","attendance":500,"year":2023,"location":"Maywood"},{"name":"HWF","attendance":500,"year":2025,"location":"Proviso"}]},"topLocations":[{"location":"Schurz HS","attendance":3000},{"location":"Tinley Park Convention Center","attendance":2500},{"location":"Prairie Hill junior High","attendance":2500},{"location":"Jones prep","attendance":1510},{"location":"Maywood","attendance":1150},{"location":"Proviso East","attendance":800},{"location":"Proviso","attendance":500},{"location":"Jackson Park","attendance":280}],"topSponsors":[{"sponsor":"Hip Hop Detox","attendance":2500},{"sponsor":"AGGF","attendance":1350},{"sponsor":"Justin Fields org.","attendance":800},{"sponsor":"UnderArmour","attendance":550},{"sponsor":"Reign Fuel","attendance":340},{"sponsor":"JuiceByK","attendance":267},{"sponsor":"Mafunzo","attendance":267},{"sponsor":"Londi","attendance":267}],"note":"Lifetime reach 2020\u20132025 from Yogaletics Impact ledger. Reach = single events \u2265300 (festivals/school assemblies); Direct = recurring class/circle programming."};
+var C={forest:'#16351A',leaf:'#2A642E',gold:'#C8860A',clay:'#B84A2A',sage:'#6E8F5F',cream:'#F3EFE4'};
+function nf(n){return Number(n||0).toLocaleString('en-US');}
+function kf(n){return n>=1000?(n/1000).toFixed(n>=10000?0:1)+'K':String(n);}
+
+function render(h){
+  document.getElementById('hero-reach').textContent = kf(h.totalAttendance).replace('K','K')+ '+ Reached';
+  document.getElementById('hero-reach').textContent = nf(Math.floor(h.totalAttendance/1000)*1000)+'+ Reached';
+  document.getElementById('hero-span').textContent = h.totalEvents+' events · '+h.distinctLocations+' venues · '+h.sinceYear+'–2025';
+
+  var stats=[
+    [nf(h.totalAttendance),'People Reached'],
+    [nf(h.totalEvents),'Events Held'],
+    [nf(h.distinctLocations),'Distinct Venues'],
+    [nf(h.coachingClients),'Coaching Clients'],
+    [(2025-h.sinceYear+1)+' yrs','Of Service']
+  ];
+  document.getElementById('statstrip').innerHTML=stats.map(function(s){
+    return '<div class="stat"><div class="n">'+s[0]+'</div><div class="l">'+s[1]+'</div></div>';}).join('');
+
+  // side pills
+  var last=h.cumulative[h.cumulative.length-1], first=h.byYear[0];
+  var growth=Math.round(h.byYear[h.byYear.length-1].attendance / Math.max(first.attendance,1));
+  document.getElementById('climbside').innerHTML=
+    '<div class="pill gold"><div class="n">'+growth+'×</div><div class="l">2025 reach vs. 2020</div></div>'+
+    '<div class="pill"><div class="n">'+nf(last.cumulative)+'</div><div class="l">Cumulative through 2025</div></div>'+
+    '<div class="pill"><div class="n">'+Math.round(h.totalAttendance/h.totalEvents)+'</div><div class="l">Avg. people / event</div></div>';
+
+  document.getElementById('direct-n').textContent=nf(h.directAttendance);
+  document.getElementById('reach-n').textContent=nf(h.reachAttendance);
+  document.getElementById('reach-list').innerHTML=h.directVsReach.reachEvents.map(function(e){
+    return '<li><span>'+e.name+' <span style="opacity:.6">('+e.year+')</span></span><b>'+nf(e.attendance)+'</b></li>';}).join('');
+  document.getElementById('reach-note').textContent=h.note;
+
+  var mx=Math.max.apply(null,h.topLocations.map(function(l){return l.attendance;}));
+  document.getElementById('venuelist').innerHTML=h.topLocations.map(function(l){
+    return '<div class="vrow"><span class="name">'+l.location+'</span><span class="bar"><i style="width:'+Math.round(l.attendance/mx*100)+'%"></i></span><span class="val">'+nf(l.attendance)+'</span></div>';}).join('');
+
+  document.getElementById('foot-clients').textContent=h.coachingClients;
+
+  // charts
+  Chart.defaults.font.family="'IBM Plex Mono',monospace";
+  Chart.defaults.font.size=11;
+  var yrs=h.byYear.map(function(d){return d.year;});
+  new Chart(document.getElementById('climbChart'),{type:'line',
+    data:{labels:yrs,datasets:[{data:h.cumulative.map(function(d){return d.cumulative;}),
+      borderColor:C.gold,borderWidth:3,fill:true,tension:.35,pointBackgroundColor:C.gold,pointRadius:4,
+      backgroundColor:function(ctx){var g=ctx.chart.ctx.createLinearGradient(0,0,0,300);g.addColorStop(0,'rgba(200,134,10,.38)');g.addColorStop(1,'rgba(200,134,10,0)');return g;}}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return' '+nf(c.parsed.y)+' cumulative';}}}},
+      scales:{x:{ticks:{color:'rgba(243,239,228,.75)'},grid:{display:false}},
+        y:{ticks:{color:'rgba(243,239,228,.6)',callback:function(v){return kf(v);}},grid:{color:'rgba(243,239,228,.12)'}}}}});
+
+  new Chart(document.getElementById('yearChart'),{type:'bar',
+    data:{labels:yrs,datasets:[{data:h.byYear.map(function(d){return d.attendance;}),
+      backgroundColor:C.leaf,borderRadius:5,hoverBackgroundColor:C.gold}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return' '+nf(c.parsed.y)+' reached';}}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#41513C'}},
+        y:{ticks:{color:'#41513C',callback:function(v){return kf(v);}},grid:{color:'rgba(22,53,26,.08)'}}}}});
+
+  var cat=h.byCategory.filter(function(d){return d.attendance>0;}).sort(function(a,b){return b.attendance-a.attendance;});
+  new Chart(document.getElementById('catChart'),{type:'doughnut',
+    data:{labels:cat.map(function(d){return d.category;}),
+      datasets:[{data:cat.map(function(d){return d.attendance;}),
+        backgroundColor:['#16351A','#2A642E','#C8860A','#6E8F5F','#B84A2A','#8B6D3A','#3E7C55'],borderWidth:2,borderColor:'#FBF9F2'}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'58%',
+      plugins:{legend:{position:'right',labels:{color:'#41513C',boxWidth:11,font:{size:10.5}}},
+        tooltip:{callbacks:{label:function(c){return' '+c.label+': '+nf(c.parsed);}}}}}});
+}
+
+async function init(){
+  var h=EMBEDDED;
+  try{
+    var res=await fetch('riseup_dashboard_data.json?t='+Date.now());
+    if(res.ok){var j=await res.json(); if(j.historical){h=j.historical;
+      var g=j.generatedAt?new Date(j.generatedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
+      document.getElementById('foot-gen').textContent=g?('Updated '+g):'';
+      document.getElementById('updated').textContent=g?('Live · '+g):'';}}
+  }catch(e){document.getElementById('updated').textContent='Static preview';}
+  render(h);
+}
+init();
+</script>
+</body>
+</html>
