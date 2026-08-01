@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rise Up Healing Collective — Impact Dashboards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#16351A;--forest2:#1E4522;--leaf:#2A642E;--gold:#C8860A;--gold2:#E7B23E;
+  --sage:#6E8F5F;--clay:#B84A2A;--cream:#F3EFE4;--paper:#FBF9F2;--ink:#1A2417;
+  --ffd:'Big Shoulders Display',sans-serif;--ffb:'Public Sans',sans-serif;--ffm:'IBM Plex Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--ffb);color:var(--cream);min-height:100vh;
+  background:linear-gradient(160deg,var(--forest) 0%,var(--forest2) 60%,#24491f 100%);
+  display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background:
+  radial-gradient(circle at 85% 10%,rgba(200,134,10,.20),transparent 42%),
+  radial-gradient(circle at 8% 92%,rgba(110,143,95,.18),transparent 48%)}
+.wrap{max-width:880px;margin:0 auto;padding:64px 24px;position:relative;z-index:1;width:100%;flex:1;
+  display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:var(--ffm);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);margin-bottom:16px}
+h1{font-family:var(--ffd);font-weight:900;font-size:clamp(40px,8vw,72px);line-height:.94;text-transform:uppercase;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--gold);display:block}
+.lede{font-size:clamp(15px,1.8vw,18px);color:rgba(243,239,228,.82);max-width:560px;margin-top:18px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+@media(max-width:680px){.cards{grid-template-columns:1fr}}
+.card{display:block;text-decoration:none;background:rgba(243,239,228,.06);border:1px solid rgba(243,239,228,.14);
+  border-radius:16px;padding:26px 24px;transition:transform .15s,background .15s,border-color .15s}
+.card:hover{transform:translateY(-3px);background:rgba(243,239,228,.1);border-color:rgba(200,134,10,.5)}
+.card .tag{font-family:var(--ffm);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}
+.card h2{font-family:var(--ffd);font-weight:800;font-size:26px;text-transform:uppercase;color:var(--cream);line-height:1;margin-bottom:10px}
+.card p{font-size:13.5px;color:rgba(243,239,228,.72);line-height:1.5}
+.card .go{font-family:var(--ffm);font-size:12px;font-weight:600;color:var(--gold);margin-top:16px;display:inline-block}
+.card.primary{background:rgba(200,134,10,.12);border-color:rgba(200,134,10,.42)}
+footer{position:relative;z-index:1;font-family:var(--ffm);font-size:12px;color:rgba(243,239,228,.55);
+  text-align:center;padding:22px 24px;border-top:1px solid rgba(243,239,228,.1)}
+footer a{color:var(--gold2);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Rise Up Healing Collective</div>
+  <h1>Impact<em>Dashboards</em></h1>
+  <p class="lede">Heal. Lead. Rise. Two views into the work — one telling the six-year impact story, one tracking the volunteer engine behind it.</p>
+
+  <div class="cards">
+    <a class="card primary" href="RiseUp_Impact_Dashboard_v4.html">
+      <div class="tag">Public · Funders &amp; Community</div>
+      <h2>Community Impact</h2>
+      <p>Lifetime reach since 2020 — people served, six-year growth, program categories, and every venue across Chicagoland.</p>
+      <span class="go">View impact report&nbsp;&rarr;</span>
+    </a>
+    <a class="card" href="RiseUp_Volunteer_Dashboard_v3.html">
+      <div class="tag">Operational · Staff &amp; Board</div>
+      <h2>Volunteer Operations</h2>
+      <p>Fiscal-year volunteer hours, contributed-services value, and the leverage each cash dollar produces in program value.</p>
+      <span class="go">Open dashboard&nbsp;&rarr;</span>
+    </a>
+  </div>
+</div>
+<footer>Rise Up Healing Collective · Yogaletics · Rich Rootz · Belize Cultural Immersion · <a href="https://riseuphc.org">riseuphc.org</a></footer>
+</body>
+</html>
