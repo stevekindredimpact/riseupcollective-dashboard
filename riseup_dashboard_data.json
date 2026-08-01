@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T23:37:21.500Z",
+  "generatedAt": "2026-08-01T20:19:10.384Z",
   "settings": {
     "orgName": "Rise Up Healing Collective",
     "fiscalYear": "2026",
@@ -140,8 +140,8 @@
       },
       {
         "year": 2023,
-        "events": 19,
-        "attendance": 1715
+        "events": 20,
+        "attendance": 1735
       },
       {
         "year": 2024,
@@ -177,23 +177,23 @@
       },
       {
         "year": 2023,
-        "attendance": 1715,
-        "cumulative": 4203
+        "attendance": 1735,
+        "cumulative": 4223
       },
       {
         "year": 2024,
         "attendance": 1707,
-        "cumulative": 5910
+        "cumulative": 5930
       },
       {
         "year": 2025,
         "attendance": 9440,
-        "cumulative": 15350
+        "cumulative": 15370
       },
       {
         "year": 2026,
         "attendance": 0,
-        "cumulative": 15350
+        "cumulative": 15370
       }
     ],
     "byCategory": [
@@ -315,7 +315,13 @@
         "attendance": 280
       }
     ],
-    "byEntity": [],
+    "byEntity": [
+      {
+        "entity": "Yogaletics LLC",
+        "events": 140,
+        "attendance": 15370
+      }
+    ],
     "riseUpOnly": {
       "events": 0,
       "attendance": 0,
@@ -323,21 +329,21 @@
       "note": "Rise Up Healing Collective was founded in 2023. Any row dated earlier belongs to Yogaletics or Rich Rootz and is excluded here."
     },
     "dataQuality": {
-      "rowsWithoutEntity": 140,
-      "attendanceWithoutEntity": 15370,
-      "attendanceWithoutYear": 20,
-      "note": "WARNING: 20 attendance is logged with no year, so the year chart will not sum to the lifetime headline."
+      "rowsWithoutEntity": 0,
+      "attendanceWithoutEntity": 0,
+      "attendanceWithoutYear": 0,
+      "note": "Year chart reconciles to the lifetime total."
     },
     "note": "Lifetime ecosystem reach 2020–present across Rise Up Healing Collective, Yogaletics, and Rich Rootz. Reach = single events >= 300 (festivals/school assemblies); Direct = recurring class/circle programming."
   },
   "riseUpMetrics": {
     "entity": "Rise Up (501c3)",
     "lifetime": {
-      "totalYouth": 0,
-      "totalAdults": 0,
+      "totalYouth": 180,
+      "totalAdults": 360,
       "schoolsEngaged": 0,
-      "totalEvents": 0,
-      "workshops": 0,
+      "totalEvents": 5,
+      "workshops": 5,
       "totalHours": 14.5
     },
     "byYear": [
@@ -370,17 +376,17 @@
       },
       {
         "year": 2026,
-        "totalYouth": 0,
-        "totalAdults": 0,
+        "totalYouth": 180,
+        "totalAdults": 360,
         "schoolsEngaged": 0,
-        "totalEvents": 0,
-        "workshops": 0,
+        "totalEvents": 5,
+        "workshops": 5,
         "totalHours": 14.5
       }
     ],
     "dataQuality": {
-      "rowsSkippedNoEntity": 5,
-      "note": "WARNING: 5 event row(s) have no Entity value and were excluded. Assign an Entity in PROGRAMS_EVENTS so they count."
+      "rowsSkippedNoEntity": 0,
+      "note": "Every event row carries an Entity value."
     },
     "note": "The six standard metrics for Rise Up Healing Collective only. Rows marked Yogaletics LLC or Rich Rootz LLC are excluded by design."
   }
