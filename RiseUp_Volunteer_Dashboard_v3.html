@@ -192,8 +192,8 @@ body{background:var(--paper);color:var(--ink);font-family:var(--ff);font-size:14
     <div class="stat-grid">
       <div class="stat stat-gold"><div class="stat-lbl">Active Volunteers</div><div class="stat-val" id="s-vols">—</div><div class="stat-sub" id="s-vols-sub"></div></div>
       <div class="stat stat-teal"><div class="stat-lbl">Total Hours</div><div class="stat-val" id="s-hours">—</div><div class="stat-sub" id="s-hours-sub"></div></div>
-      <div class="stat stat-blue"><div class="stat-lbl">Total Program Value</div><div class="stat-val" id="s-value">—</div><div class="stat-sub" id="s-value-sub"></div></div>
-      <div class="stat stat-green"><div class="stat-lbl">Leverage Ratio</div><div class="stat-val" id="s-leverage">—</div><div class="stat-sub" id="s-leverage-sub"></div></div>
+      <div class="stat stat-blue"><div class="stat-lbl">Total Resources Secured</div><div class="stat-val" id="s-value">—</div><div class="stat-sub" id="s-value-sub"></div></div>
+      <div class="stat stat-green"><div class="stat-lbl">Resources-to-Cash</div><div class="stat-val" id="s-leverage">—</div><div class="stat-sub" id="s-leverage-sub"></div></div>
     </div>
 
     <a class="hist-strip" id="hist-strip" href="RiseUp_Impact_Dashboard_v4.html" style="display:none">
@@ -218,9 +218,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--ff);font-size:14
         <div class="vol-chart-wrap"><div style="position:relative;height:170px"><canvas id="vol-chart" role="img" aria-label="Donut chart of volunteer value by contributor"></canvas></div></div>
       </div>
       <div class="col-card">
-        <div class="col-card-header"><div class="col-card-title">Leverage Analysis</div><div class="col-card-sub">Program value per cash dollar invested</div></div>
+        <div class="col-card-header"><div class="col-card-title">Resources Analysis</div><div class="col-card-sub">Resources mobilized per $1 of cash</div></div>
         <div id="lev-rows"></div>
-        <div class="lev-chart-wrap"><div style="position:relative;height:150px"><canvas id="lev-chart" role="img" aria-label="Bar chart of program value components"></canvas></div></div>
+        <div class="lev-chart-wrap"><div style="position:relative;height:150px"><canvas id="lev-chart" role="img" aria-label="Bar chart of resource components"></canvas></div></div>
         <div class="lev-note" id="lev-note"></div>
       </div>
     </div>
@@ -339,12 +339,12 @@ function renderLeverage(sum,s){
     {l:'Cash grants received',v:$f(sum.cashGrants||0),c:''},
     {l:'Volunteer labor value',v:$f(sum.totalVolValue||0),c:'',vs:'color:var(--gold)'},
     {l:'In-kind contributions',v:$f(sum.totalInKind||0),c:'',vs:'color:var(--teal)'},
-    {l:'Total program value',v:$f(sum.totalProgramValue||0),c:'lev-total'},
-    {l:'Leverage ratio',v:sum.leverageRatio?sum.leverageRatio.toFixed(1)+'×':'N/A',c:'lev-highlight'}
+    {l:'Total resources secured',v:$f(sum.totalProgramValue||0),c:'lev-total'},
+    {l:'Resources-to-cash',v:sum.leverageRatio?sum.leverageRatio.toFixed(1)+'×':'N/A',c:'lev-highlight'}
   ].map(function(r){return'<div class="lev-row '+r.c+'"><span class="lev-lbl">'+r.l+'</span><span class="lev-val"'+(r.vs?' style="'+r.vs+'"':'')+'>'+r.v+'</span></div>';}).join('');
   var lv={cash:sum.cashGrants||0,ink:sum.totalInKind||0,vol:sum.totalVolValue||0};
   try{new Chart(document.getElementById('lev-chart'),{type:'bar',
-    data:{labels:['Total Program Value'],datasets:[
+    data:{labels:['Total Resources Secured'],datasets:[
       {label:'Cash grants',data:[lv.cash],backgroundColor:'#2A642E',borderRadius:3},
       {label:'In-kind',data:[lv.ink],backgroundColor:'#6E8F5F',borderRadius:3},
       {label:'Volunteer labor',data:[lv.vol],backgroundColor:'#C8860A',borderRadius:3}
