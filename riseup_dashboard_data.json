@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T20:19:10.384Z",
+  "generatedAt": "2026-08-02T16:26:26.867Z",
   "settings": {
     "orgName": "Rise Up Healing Collective",
     "fiscalYear": "2026",
@@ -12,10 +12,10 @@
     "totalVolunteers": 2,
     "totalHours": 14.5,
     "totalVolValue": 609.5,
-    "totalInKind": 0,
+    "totalInKind": 580,
     "cashGrants": 5000,
-    "totalProgramValue": 5609.5,
-    "leverageRatio": 1.1,
+    "totalProgramValue": 6189.5,
+    "leverageRatio": 1.2,
     "totalParticipants": 540,
     "totalContacts": 7
   },
@@ -30,7 +30,7 @@
       "youthServed": 20,
       "adults": 5,
       "volHours": 0,
-      "totalValue": 0
+      "totalValue": 5000
     },
     {
       "id": "P002",
@@ -53,8 +53,8 @@
       "partners": "My Brother's Keeper Alliance",
       "youthServed": 85,
       "adults": 40,
-      "volHours": 0,
-      "totalValue": 0
+      "volHours": 5,
+      "totalValue": 265
     },
     {
       "id": "P004",
@@ -65,8 +65,8 @@
       "partners": "Rich Rootz / Local Partners",
       "youthServed": 35,
       "adults": 10,
-      "volHours": 0,
-      "totalValue": 0
+      "volHours": 3.5,
+      "totalValue": 314.5
     },
     {
       "id": "P003",
@@ -77,8 +77,8 @@
       "partners": "Dominican University",
       "youthServed": 25,
       "adults": 5,
-      "volHours": 0,
-      "totalValue": 0
+      "volHours": 6,
+      "totalValue": 610
     }
   ],
   "topVolunteers": [
