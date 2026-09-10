@@ -160,6 +160,9 @@ body{background:var(--paper);color:var(--ink);font-family:var(--ff);font-size:14
   .hero-inner,.main{padding-left:20px;padding-right:20px}
   .stat-val{font-size:22px}
 }
+
+.evt-count{font-family:var(--ffm,'IBM Plex Mono',monospace);font-size:11px;font-weight:400;
+  letter-spacing:.02em;color:#7A8A72;text-transform:none;margin-left:10px}
 </style>
 </head>
 <body>
@@ -202,7 +205,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--ff);font-size:14
       <span class="hs-link">Full impact report&nbsp;&rarr;</span>
     </a>
 
-    <div class="sec-title">Programs &amp; Events</div>
+    <div class="sec-title">Programs &amp; Events <span id="evt-count" class="evt-count"></span></div>
     <div class="events-wrap">
       <table class="evt-table">
         <thead><tr><th>Program / Event</th><th>Date</th><th>Location</th><th style="text-align:right">Youth</th><th style="text-align:right">Vol. Hrs</th><th style="text-align:right">Value</th></tr></thead>
@@ -279,7 +282,8 @@ function render(data){
   document.getElementById('top-year').textContent=s.fiscalYear||'';
   document.getElementById('hero-title').innerHTML=esc(s.orgName||'Organization')+'<br><em>Volunteer Impact Dashboard</em>';
   document.getElementById('hero-meta').innerHTML='Fiscal Year <strong>'+esc(String(s.fiscalYear||''))+'</strong> &nbsp;·&nbsp; ED: <strong>'+esc(s.executiveDirector||'')+'</strong> &nbsp;·&nbsp; IS Rate <strong>$'+Number(s.standardRate||31.80).toFixed(2)+'/hr</strong> &nbsp;·&nbsp; Professional <strong>$'+Number(s.professionalRate||95).toFixed(2)+'/hr</strong>';
-  var future=(data.recentEvents||[]).filter(function(e){return e.date>=new Date().toISOString().slice(0,10);}).sort(function(a,b){return a.date.localeCompare(b.date);});
+  var ALLEV=(data.allEvents&&data.allEvents.length)?data.allEvents:(data.recentEvents||[]);
+  var future=ALLEV.filter(function(e){return e.date>=new Date().toISOString().slice(0,10);}).sort(function(a,b){return a.date.localeCompare(b.date);});
   if(future.length>0){document.getElementById('hero-right').innerHTML='<div class="upcoming"><div class="up-label">Upcoming</div>'+future.slice(0,3).map(function(e){return '<div class="up-row"><span class="up-date">'+esc(fdate(e.date))+'</span><span class="up-name">'+esc(e.name)+'</span></div>';}).join('')+'</div>';}
   document.getElementById('s-vols').textContent=sum.totalVolunteers||'0';
   document.getElementById('s-vols-sub').textContent=(sum.totalParticipants||0)+' total participants served';
@@ -289,7 +293,7 @@ function render(data){
   document.getElementById('s-value-sub').textContent='Vol + In-Kind + Cash grants';
   document.getElementById('s-leverage').textContent=sum.leverageRatio?sum.leverageRatio.toFixed(1)+'×':'—';
   document.getElementById('s-leverage-sub').textContent=sum.cashGrants?'per $1 of cash ('+$f(sum.cashGrants)+' received)':'Set cash grants in SETTINGS tab';
-  renderEvents(data.recentEvents||[]);
+  renderEvents(ALLEV);
   renderVols(data.topVolunteers||[],sum);
   renderLeverage(sum,s);
   renderDem(data.demographics||{});
@@ -304,7 +308,11 @@ function renderEvents(evts){
   var tb=document.getElementById('events-body');
   if(!evts.length){tb.innerHTML='<tr><td colspan="6" class="evt-empty">No programs logged yet</td></tr>';return;}
   var sorted=evts.slice().sort(function(a,b){return b.date.localeCompare(a.date);});
-  var shown=sorted.slice(0,10);
+  var shown=sorted.slice(0,12);
+  var cnt=document.getElementById('evt-count');
+  if(cnt) cnt.textContent = shown.length<sorted.length
+      ? ('Showing '+shown.length+' most recent of '+sorted.length+' programs this year')
+      : (sorted.length+' program'+(sorted.length===1?'':'s')+' this year');
   tb.innerHTML=shown.map(function(ev,i){
     return'<tr style="'+(i%2?'background:var(--paper)':'')+'">'+
       '<td><div class="evt-name">'+esc(ev.name)+'</div>'+(ev.area?'<div class="evt-area">'+esc(ev.area)+'</div>':'')+'</td>'+
