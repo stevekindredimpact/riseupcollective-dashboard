@@ -94,6 +94,20 @@ footer b{color:var(--cream)}
 footer a{color:var(--gold);text-decoration:none}
 .note{font-size:12px;color:var(--ink2);font-style:italic;margin-top:14px;padding:12px 14px;background:var(--cream);border-radius:8px;border-left:3px solid var(--sage)}
 .print-btn{position:fixed;bottom:20px;right:20px;background:var(--gold);color:#1a1300;border:none;border-radius:24px;padding:11px 18px;font-family:var(--ffm);font-size:12px;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+
+#riseup-share .stats{margin-top:14px}
+#riseup-share .lede,#partners .lede{max-width:70ch;opacity:.85;margin:2px 0 4px}
+.pt-cats{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.pt-chip{background:#F3EFE4;border:1px solid rgba(22,53,26,.14);border-radius:999px;
+  padding:5px 13px;font-size:12px;color:#2A3B26;font-family:'IBM Plex Mono',monospace}
+.pt-chip b{color:#C8860A;margin-left:3px}
+.pt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:20px}
+.pt-col h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C8860A;
+  margin:0 0 9px;font-family:'IBM Plex Mono',monospace;font-weight:600}
+.pt-col ul{list-style:none;margin:0;padding:0}
+.pt-col li{font-size:13px;line-height:1.55;color:#3A4A34;padding:3px 0;
+  border-bottom:1px solid rgba(22,53,26,.07)}
+@media print{.pt-grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
@@ -150,6 +164,19 @@ footer a{color:var(--gold);text-decoration:none}
   <div class="note" id="reach-note"></div>
 </section>
 
+<section id="riseup-share" style="padding-top:6px">
+  <h2>Rise Up Healing Collective <span class="sub">the nonprofit's own programming</span></h2>
+  <p class="lede" id="ru-lede">The collective's lifetime figures above include the founders' earlier practice work. These are the numbers delivered by Rise Up Healing Collective (501c3) itself.</p>
+  <div class="stats" id="ru-strip"></div>
+</section>
+
+<section id="partners">
+  <h2>Partner Ecosystem <span class="sub">organizations we build with</span></h2>
+  <p class="lede" id="pt-lede"></p>
+  <div class="pt-cats" id="pt-cats"></div>
+  <div class="pt-grid" id="pt-grid"></div>
+</section>
+
 <section id="venues">
   <div class="sec-head"><span class="sec-num">03</span><h2>Where It Happened</h2></div>
   <p class="sec-sub">Top venues by people reached, out of 63 distinct locations across Chicagoland and beyond.</p>
@@ -176,27 +203,33 @@ function nf(n){return Number(n||0).toLocaleString('en-US');}
 function kf(n){return n>=1000?(n/1000).toFixed(n>=10000?0:1)+'K':String(n);}
 
 function render(h){
-  document.getElementById('hero-reach').textContent = kf(h.totalAttendance).replace('K','K')+ '+ Reached';
-  document.getElementById('hero-reach').textContent = nf(Math.floor(h.totalAttendance/1000)*1000)+'+ Reached';
-  document.getElementById('hero-span').textContent = h.totalEvents+' events · '+h.distinctLocations+' venues · '+h.sinceYear+'–2025';
+  // Combined = historical ledger (2020-2025) + current-cycle events. Falls back cleanly.
+  var cb = h.combined || {};
+  var TOTAL  = cb.totalAttendance != null ? cb.totalAttendance : h.totalAttendance;
+  var EVENTS = cb.totalEvents     != null ? cb.totalEvents     : h.totalEvents;
+  var THISYR = new Date().getFullYear();
+
+  document.getElementById('hero-reach').textContent = nf(Math.floor(TOTAL/1000)*1000)+'+ Reached';
+  document.getElementById('hero-span').textContent = EVENTS+' events · '+h.distinctLocations+' venues · '+h.sinceYear+'–'+THISYR;
 
   var stats=[
-    [nf(h.totalAttendance),'People Reached'],
-    [nf(h.totalEvents),'Events Held'],
+    [nf(TOTAL),'People Reached'],
+    [nf(EVENTS),'Events Held'],
     [nf(h.distinctLocations),'Distinct Venues'],
     [nf(h.coachingClients),'Coaching Clients'],
-    [(2025-h.sinceYear+1)+' yrs','Of Service']
+    [(THISYR-h.sinceYear+1)+' yrs','Of Service']
   ];
   document.getElementById('statstrip').innerHTML=stats.map(function(s){
     return '<div class="stat"><div class="n">'+s[0]+'</div><div class="l">'+s[1]+'</div></div>';}).join('');
 
   // side pills
   var last=h.cumulative[h.cumulative.length-1], first=h.byYear[0];
-  var growth=Math.round(h.byYear[h.byYear.length-1].attendance / Math.max(first.attendance,1));
+  var peak=h.byYear.reduce(function(a,b){return b.attendance>a.attendance?b:a;},h.byYear[0]);
+  var growth=Math.round(peak.attendance / Math.max(first.attendance,1));
   document.getElementById('climbside').innerHTML=
-    '<div class="pill gold"><div class="n">'+growth+'×</div><div class="l">2025 reach vs. 2020</div></div>'+
-    '<div class="pill"><div class="n">'+nf(last.cumulative)+'</div><div class="l">Cumulative through 2025</div></div>'+
-    '<div class="pill"><div class="n">'+Math.round(h.totalAttendance/h.totalEvents)+'</div><div class="l">Avg. people / event</div></div>';
+    '<div class="pill gold"><div class="n">'+growth+'×</div><div class="l">Peak year ('+peak.year+') vs. '+first.year+'</div></div>'+
+    '<div class="pill"><div class="n">'+nf(last.cumulative)+'</div><div class="l">Cumulative through '+last.year+'</div></div>'+
+    '<div class="pill"><div class="n">'+Math.round(TOTAL/Math.max(EVENTS,1))+'</div><div class="l">Avg. people / event</div></div>';
 
   document.getElementById('direct-n').textContent=nf(h.directAttendance);
   document.getElementById('reach-n').textContent=nf(h.reachAttendance);
@@ -241,16 +274,54 @@ function render(h){
         tooltip:{callbacks:{label:function(c){return' '+c.label+': '+nf(c.parsed);}}}}}});
 }
 
+
+function renderRiseUp(j){
+  var m = j.riseUpMetrics && j.riseUpMetrics.lifetime;
+  if(!m){ var el=document.getElementById('riseup-share'); if(el) el.style.display='none'; return; }
+  var rows=[
+    [nf(m.totalYouth),'Youth Served'],
+    [nf(m.totalAdults),'Adults Engaged'],
+    [nf(m.totalEvents),'Programs Delivered'],
+    [nf(m.workshops),'Sessions Held'],
+    [nf(m.totalHours),'Volunteer Hours']
+  ];
+  document.getElementById('ru-strip').innerHTML=rows.map(function(s){
+    return '<div class="stat"><div class="n">'+s[0]+'</div><div class="l">'+s[1]+'</div></div>';}).join('');
+}
+
+function renderPartners(j){
+  var p = j.partners;
+  if(!p || !p.list || !p.list.length){ var el=document.getElementById('partners'); if(el) el.style.display='none'; return; }
+  document.getElementById('pt-lede').textContent =
+    p.total+' organizations across schools, foundations, brands, and community partners have collaborated with the collective.';
+  document.getElementById('pt-cats').innerHTML = p.byCategory.map(function(c){
+    return '<span class="pt-chip">'+c.category+' <b>'+c.count+'</b></span>';}).join('');
+  var order = p.byCategory.map(function(c){return c.category;});
+  document.getElementById('pt-grid').innerHTML = order.map(function(cat){
+    var items=p.list.filter(function(x){return x.category===cat;});
+    if(!items.length) return '';
+    return '<div class="pt-col"><h4>'+cat+'</h4><ul>'+items.map(function(x){
+      return '<li>'+x.name+'</li>';}).join('')+'</ul></div>';}).join('');
+}
+
 async function init(){
-  var h=EMBEDDED;
+  var h=EMBEDDED, payload=null;
   try{
     var res=await fetch('riseup_dashboard_data.json?t='+Date.now());
-    if(res.ok){var j=await res.json(); if(j.historical){h=j.historical;
+    if(res.ok){var j=await res.json(); payload=j; if(j.historical){h=j.historical;
       var g=j.generatedAt?new Date(j.generatedAt).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
       document.getElementById('foot-gen').textContent=g?('Updated '+g):'';
       document.getElementById('updated').textContent=g?('Live · '+g):'';}}
   }catch(e){document.getElementById('updated').textContent='Static preview';}
-  render(h);
+  // Data sections first, and independently — a chart/CDN failure must never blank them.
+  if(payload){
+    try{ renderRiseUp(payload); }catch(e){ console.error('riseup section',e); }
+    try{ renderPartners(payload); }catch(e){ console.error('partners section',e); }
+  } else {
+    var a=document.getElementById('riseup-share'), b=document.getElementById('partners');
+    if(a) a.style.display='none'; if(b) b.style.display='none';
+  }
+  try{ render(h); }catch(e){ console.error('main render',e); }
 }
 init();
 </script>
