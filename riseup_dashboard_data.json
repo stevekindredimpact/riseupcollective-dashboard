@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T12:42:39.436Z",
+  "generatedAt": "2026-09-10T13:18:37.068Z",
   "settings": {
     "orgName": "Rise Up Healing Collective",
     "fiscalYear": "2026",
@@ -112,7 +112,7 @@
     "bipocCount": 5,
     "bipocPct": 100,
     "demographicResponseRate": 71.4,
-    "note": "Aggregate only — no personally identifiable information"
+    "note": "Aggregate only - no personally identifiable information"
   },
   "historical": {
     "sinceYear": 2020,
@@ -155,8 +155,8 @@
       },
       {
         "year": 2026,
-        "events": 0,
-        "attendance": 0
+        "events": 15,
+        "attendance": 960
       }
     ],
     "cumulative": [
@@ -192,8 +192,8 @@
       },
       {
         "year": 2026,
-        "attendance": 0,
-        "cumulative": 15370
+        "attendance": 960,
+        "cumulative": 16330
       }
     ],
     "byCategory": [
@@ -334,7 +334,14 @@
       "attendanceWithoutYear": 0,
       "note": "Year chart reconciles to the lifetime total."
     },
-    "note": "Lifetime ecosystem reach 2020–present across Rise Up Healing Collective, Yogaletics, and Rich Rootz. Reach = single events >= 300 (festivals/school assemblies); Direct = recurring class/circle programming."
+    "note": "Lifetime ecosystem reach 2020-present across Rise Up Healing Collective, Yogaletics, and Rich Rootz. Reach = single events >= 300 (festivals/school assemblies); Direct = recurring class/circle programming.",
+    "combined": {
+      "totalAttendance": 16330,
+      "totalEvents": 155,
+      "currentCycleAttendance": 960,
+      "currentCycleEvents": 15,
+      "note": "Historical ledger plus current-cycle events. No overlap."
+    }
   },
   "riseUpMetrics": {
     "entity": "Rise Up (501c3)",
@@ -389,5 +396,545 @@
       "note": "Every event row carries an Entity value."
     },
     "note": "The six standard metrics for Rise Up Healing Collective only. Rows marked Yogaletics LLC or Rich Rootz LLC are excluded by design."
+  },
+  "allEvents": [
+    {
+      "id": "P001",
+      "name": "Obama Center — MBK Breathwork",
+      "date": "2026-05-15",
+      "year": 2026,
+      "area": "Community Wellness / MBK",
+      "location": "Obama Presidential Center, Hyde Park",
+      "partners": "My Brother's Keeper Alliance",
+      "entity": "Joint",
+      "youthServed": 85,
+      "adults": 40,
+      "volHours": 5,
+      "totalValue": 265
+    },
+    {
+      "id": "P002",
+      "name": "Race Against Gun Violence — June 4",
+      "date": "2026-06-04",
+      "year": 2026,
+      "area": "Community Events / Youth",
+      "location": "Grant Park, Chicago",
+      "partners": "RAGV Organizers / RunSignUp",
+      "entity": "Rise Up (501c3)",
+      "youthServed": 15,
+      "adults": 300,
+      "volHours": 0,
+      "totalValue": 0
+    },
+    {
+      "id": "P003",
+      "name": "Dominican University Wellness Program",
+      "date": "2026-04-01",
+      "year": 2026,
+      "area": "Yogaletics Programming",
+      "location": "Dominican University, River Forest",
+      "partners": "Dominican University",
+      "entity": "Joint",
+      "youthServed": 25,
+      "adults": 5,
+      "volHours": 6,
+      "totalValue": 610
+    },
+    {
+      "id": "P004",
+      "name": "Rich Rootz Peace Circle — Englewood",
+      "date": "2026-05-01",
+      "year": 2026,
+      "area": "Restorative Justice / Peace Circles",
+      "location": "Englewood Community Site, Chicago",
+      "partners": "Rich Rootz / Local Partners",
+      "entity": "Joint",
+      "youthServed": 35,
+      "adults": 10,
+      "volHours": 3.5,
+      "totalValue": 314.5
+    },
+    {
+      "id": "P005",
+      "name": "Belize 2026 — Pre-Departure Sessions",
+      "date": "2026-08-01",
+      "year": 2026,
+      "area": "Belize Cultural Immersion",
+      "location": "Multiple sites — Chicago",
+      "partners": "Rise Up Partners",
+      "entity": "Rise Up (501c3)",
+      "youthServed": 20,
+      "adults": 5,
+      "volHours": 0,
+      "totalValue": 5000
+    },
+    {
+      "id": "P006",
+      "name": "Woodrow Wilson Elemantry School - Afterschool program",
+      "date": "2026-03-15",
+      "year": 2026,
+      "area": "Art, Leadership & Wellness programming",
+      "location": "Calumet City",
+      "partners": "Calumet School District",
+      "entity": "Joint",
+      "youthServed": 30,
+      "adults": 5,
+      "volHours": 30,
+      "totalValue": 1410
+    },
+    {
+      "id": "P007",
+      "name": "Champs Youth Mentorshop Wellness Day",
+      "date": "2026-04-18",
+      "year": 2026,
+      "area": "Yogaletics Youth Development",
+      "location": "Gary Comer Youth Center",
+      "partners": "Champs",
+      "entity": "Yogaletics LLC",
+      "youthServed": 35,
+      "adults": 7,
+      "volHours": 1,
+      "totalValue": 47
+    },
+    {
+      "id": "P008",
+      "name": "Community Wellness Day",
+      "date": "2026-05-20",
+      "year": 2026,
+      "area": "Rise Up",
+      "location": "Henry Palmisano Park",
+      "partners": "Rise Up",
+      "entity": "Rise Up (501c3)",
+      "youthServed": 3,
+      "adults": 25,
+      "volHours": 4,
+      "totalValue": 188
+    },
+    {
+      "id": "P009",
+      "name": "A Healing Hike",
+      "date": "2026-06-06",
+      "year": 2026,
+      "area": "Rise Up",
+      "location": "Starved Rock State Park",
+      "partners": "Trinity Church of Chicago",
+      "entity": "Rise Up (501c3)",
+      "youthServed": 35,
+      "adults": 0,
+      "volHours": 4,
+      "totalValue": 188
+    },
+    {
+      "id": "P010",
+      "name": "Court Watchers Wellness Session",
+      "date": "2026-08-28",
+      "year": 2026,
+      "area": "Rise Up",
+      "location": "Fine Arts Building Chicago",
+      "partners": "Chicago Votes",
+      "entity": "Rise Up (501c3)",
+      "youthServed": 0,
+      "adults": 20,
+      "volHours": 2,
+      "totalValue": 94
+    },
+    {
+      "id": "P011",
+      "name": "Afro Yoga",
+      "date": "2026-08-23",
+      "year": 2026,
+      "area": "Beach Yoga",
+      "location": "Montrose Beach",
+      "partners": "LOJ Fit",
+      "entity": "Rich Rootz LLC",
+      "youthServed": 0,
+      "adults": 50,
+      "volHours": 3,
+      "totalValue": 141
+    },
+    {
+      "id": "P012",
+      "name": "Womans Wellness",
+      "date": "2026-03-29",
+      "year": 2026,
+      "area": "Womens Wellness",
+      "location": "Bronzeville",
+      "partners": "Rich Rootz",
+      "entity": "Rich Rootz LLC",
+      "youthServed": 5,
+      "adults": 20,
+      "volHours": 4,
+      "totalValue": 188
+    },
+    {
+      "id": "P013",
+      "name": "Arts & Healing Workshop",
+      "date": "2026-03-10",
+      "year": 2026,
+      "area": "Arts & Yoga",
+      "location": "Dvorak Elemantry School",
+      "partners": "Haitian American Museum Of Culture",
+      "entity": "Yogaletics LLC",
+      "youthServed": 100,
+      "adults": 10,
+      "volHours": 4,
+      "totalValue": 188
+    },
+    {
+      "id": "P014",
+      "name": "Arts & Healing Workshop",
+      "date": "2026-05-15",
+      "year": 2026,
+      "area": "Arts & Yoga",
+      "location": "Courtney Language Art School",
+      "partners": "Haitian American Museum Of Culture",
+      "entity": "Yogaletics LLC",
+      "youthServed": 50,
+      "adults": 5,
+      "volHours": 4,
+      "totalValue": 188
+    },
+    {
+      "id": "P015",
+      "name": "Rise Up Community Gathering",
+      "date": "2026-02-06",
+      "year": 2026,
+      "area": "Community Event",
+      "location": "Bronzeville",
+      "partners": "Rise Up",
+      "entity": "Rise Up (501c3)",
+      "youthServed": 10,
+      "adults": 10,
+      "volHours": 0,
+      "totalValue": 0
+    }
+  ],
+  "partners": {
+    "total": 50,
+    "byCategory": [
+      {
+        "category": "Community & Wellness",
+        "count": 17
+      },
+      {
+        "category": "Youth & Schools",
+        "count": 16
+      },
+      {
+        "category": "Foundation & Institutional",
+        "count": 7
+      },
+      {
+        "category": "Brand & Corporate",
+        "count": 6
+      },
+      {
+        "category": "Arts & Culture",
+        "count": 4
+      }
+    ],
+    "list": [
+      {
+        "name": "Under Armour",
+        "category": "Brand & Corporate",
+        "entity": "Yogaletics LLC",
+        "engagement": "Sponsorship; apparel and content promotion"
+      },
+      {
+        "name": "New Balance",
+        "category": "Brand & Corporate",
+        "entity": "Yogaletics LLC",
+        "engagement": "Commercial campaign"
+      },
+      {
+        "name": "Nike Chicago",
+        "category": "Brand & Corporate",
+        "entity": "Yogaletics LLC",
+        "engagement": "Commercial campaign"
+      },
+      {
+        "name": "Brooks",
+        "category": "Brand & Corporate",
+        "entity": "Yogaletics LLC",
+        "engagement": "Commercial campaign"
+      },
+      {
+        "name": "Optimum Nutrition",
+        "category": "Brand & Corporate",
+        "entity": "Yogaletics LLC",
+        "engagement": "Commercial campaign"
+      },
+      {
+        "name": "Sundrip",
+        "category": "Brand & Corporate",
+        "entity": "Yogaletics LLC",
+        "engagement": "Ambassador program / sponsorship"
+      },
+      {
+        "name": "Equiticity",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Meditation programming"
+      },
+      {
+        "name": "Global United Diaspora",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Summer youth camps"
+      },
+      {
+        "name": "Healthy Hood",
+        "category": "Community & Wellness",
+        "entity": "Joint",
+        "engagement": "Community yoga classes"
+      },
+      {
+        "name": "Metropolitan Board of the Chicago Urban League",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Men's yoga programming"
+      },
+      {
+        "name": "Chi Wellness",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Partnership / collaboration"
+      },
+      {
+        "name": "Hazroom",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Community yoga classes"
+      },
+      {
+        "name": "Scratchgoods",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Ticketed wellness events"
+      },
+      {
+        "name": "A Greater Good Foundation",
+        "category": "Foundation & Institutional",
+        "entity": "Yogaletics LLC",
+        "engagement": "Wellness partnership in schools and community orgs"
+      },
+      {
+        "name": "Mental Health Matters",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Yoga programming"
+      },
+      {
+        "name": "Chi Fit & Dance Festival",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Community fitness festival"
+      },
+      {
+        "name": "TRACE (Teens Reimagining Art, Community & Environment)",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Youth and community programming"
+      },
+      {
+        "name": "West 40",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Public speaking"
+      },
+      {
+        "name": "Lions Paw",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Youth wellness programming"
+      },
+      {
+        "name": "Champs Youth Mentoring",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Youth wellness programming"
+      },
+      {
+        "name": "Limes Smiles for Miles",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Yoga and meditation"
+      },
+      {
+        "name": "Faith In Place",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Partnership / collaboration"
+      },
+      {
+        "name": "Salvation Army",
+        "category": "Foundation & Institutional",
+        "entity": "Yogaletics LLC",
+        "engagement": "24-week youth development program"
+      },
+      {
+        "name": "MBK (My Brother’s Keeper)",
+        "category": "Youth & Schools",
+        "entity": "Joint",
+        "engagement": "Wellness partnership"
+      },
+      {
+        "name": "HAMOC (Haitian American Museum of Chicago)",
+        "category": "Arts & Culture",
+        "entity": "Yogaletics LLC",
+        "engagement": "Art and wellness collaborations"
+      },
+      {
+        "name": "The Quarry",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Senior wellness (volunteer)"
+      },
+      {
+        "name": "Haitian Preservation",
+        "category": "Arts & Culture",
+        "entity": "Joint",
+        "engagement": "Health and meditation workshops (volunteer)"
+      },
+      {
+        "name": "Ayiti Community Trust",
+        "category": "Arts & Culture",
+        "entity": "Yogaletics LLC",
+        "engagement": "Health and meditation workshops (volunteer)"
+      },
+      {
+        "name": "THK (The Harper Kid Foundation)",
+        "category": "Foundation & Institutional",
+        "entity": "Yogaletics LLC",
+        "engagement": "Free community class"
+      },
+      {
+        "name": "Rite To Wellness",
+        "category": "Community & Wellness",
+        "entity": "Joint",
+        "engagement": "Wellness workshop (free)"
+      },
+      {
+        "name": "Fusion of Light Entertainment",
+        "category": "Arts & Culture",
+        "entity": "Yogaletics LLC",
+        "engagement": "Panel discussion"
+      },
+      {
+        "name": "Black Girl Environmentalist",
+        "category": "Community & Wellness",
+        "entity": "Joint",
+        "engagement": "Sponsored community hike (60+ participants)"
+      },
+      {
+        "name": "Axon Yoga",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Men's yoga class"
+      },
+      {
+        "name": "Social Storm",
+        "category": "Community & Wellness",
+        "entity": "Yogaletics LLC",
+        "engagement": "Public speaking"
+      },
+      {
+        "name": "Schurz High School",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Wellness Day"
+      },
+      {
+        "name": "Englewood STEM",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Youth peace circle"
+      },
+      {
+        "name": "Dominican University (Chicago & River Forest)",
+        "category": "Youth & Schools",
+        "entity": "Joint",
+        "engagement": "Semester wellness partnership"
+      },
+      {
+        "name": "Woodrow Wilson Elementary School",
+        "category": "Youth & Schools",
+        "entity": "Joint",
+        "engagement": "After-school programming"
+      },
+      {
+        "name": "Courtenay Language Arts School",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Art and wellness workshop"
+      },
+      {
+        "name": "Dvorak School of Excellence",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Art and wellness workshop"
+      },
+      {
+        "name": "Art In Motion",
+        "category": "Youth & Schools",
+        "entity": "Yogaletics LLC",
+        "engagement": "Public speaking and meditation"
+      },
+      {
+        "name": "Oak Park River Forest Foundation",
+        "category": "Foundation & Institutional",
+        "entity": "Rise Up (501c3)",
+        "engagement": "Global cultural immersion to Belize"
+      },
+      {
+        "name": "Strides for Peace",
+        "category": "Foundation & Institutional",
+        "entity": "Rise Up (501c3)",
+        "engagement": "Race Against Gun Violence"
+      },
+      {
+        "name": "Chicago Votes",
+        "category": "Foundation & Institutional",
+        "entity": "Rise Up (501c3)",
+        "engagement": "Wellness partnership"
+      },
+      {
+        "name": "UIC Cancer Center",
+        "category": "Foundation & Institutional",
+        "entity": "Rise Up (501c3)",
+        "engagement": "Wellness workshops"
+      },
+      {
+        "name": "Dyett High School",
+        "category": "Youth & Schools",
+        "entity": "Rich Rootz LLC",
+        "engagement": "Peace circles"
+      },
+      {
+        "name": "A Long Walk Home",
+        "category": "Youth & Schools",
+        "entity": "Rich Rootz LLC",
+        "engagement": "Youth wellness workshop"
+      },
+      {
+        "name": "Sista Afia",
+        "category": "Community & Wellness",
+        "entity": "Rich Rootz LLC",
+        "engagement": "Yoga and sound bowl healing"
+      },
+      {
+        "name": "Bold Girl Inc.",
+        "category": "Youth & Schools",
+        "entity": "Rich Rootz LLC",
+        "engagement": "Youth wellness workshop"
+      },
+      {
+        "name": "Lindblom",
+        "category": "Youth & Schools",
+        "entity": "Rich Rootz LLC",
+        "engagement": "Free yoga session"
+      }
+    ],
+    "note": "Partner names and categories only. Engagement values are confidential and excluded by design."
   }
 }
