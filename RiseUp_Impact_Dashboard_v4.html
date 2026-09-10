@@ -179,7 +179,7 @@ footer a{color:var(--gold);text-decoration:none}
 
 <section id="venues">
   <div class="sec-head"><span class="sec-num">03</span><h2>Where It Happened</h2></div>
-  <p class="sec-sub">Top venues by people reached, out of 63 distinct locations across Chicagoland and beyond.</p>
+  <p class="sec-sub">Top venues by people reached, out of <span id="venue-count">--</span> distinct locations across Chicagoland and beyond.</p>
   <div class="venues" id="venuelist"></div>
 </section>
 
@@ -225,6 +225,8 @@ function render(h){
   if(ch) ch.textContent = 'Cumulative Reach \u00b7 '+h.sinceYear+' \u2192 '+THISYR;
   var fs=document.getElementById('foot-span');
   if(fs) fs.textContent = SPAN;
+  var vc=document.getElementById('venue-count');
+  if(vc) vc.textContent = nf(VENUES);
 
   var stats=[
     [nf(TOTAL),'People Reached'],
