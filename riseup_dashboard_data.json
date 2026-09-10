@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T13:18:37.068Z",
+  "generatedAt": "2026-09-10T13:42:11.884Z",
   "settings": {
     "orgName": "Rise Up Healing Collective",
     "fiscalYear": "2026",
@@ -338,6 +338,7 @@
     "combined": {
       "totalAttendance": 16330,
       "totalEvents": 155,
+      "distinctLocations": 76,
       "currentCycleAttendance": 960,
       "currentCycleEvents": 15,
       "note": "Historical ledger plus current-cycle events. No overlap."
