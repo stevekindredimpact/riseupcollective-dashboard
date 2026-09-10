@@ -322,7 +322,11 @@ function renderEvents(evts){
       '<td class="evt-num">'+(ev.volHours?hf(ev.volHours):'—')+'</td>'+
       '<td class="evt-val">'+(ev.totalValue?$f(ev.totalValue):'—')+'</td></tr>';
   }).join('')+
-  (sorted.length>10?'<tr><td colspan="6" class="evt-more">Showing 10 most recent of '+sorted.length+' logged events</td></tr>':'');
+  (shown.length<sorted.length
+    ? '<tr><td colspan="6" class="evt-more">'+(sorted.length-shown.length)+
+      ' earlier program'+((sorted.length-shown.length)===1?'':'s')+
+      ' this year not shown - see the full impact report</td></tr>'
+    : '');
 }
 
 function renderVols(vols,sum){
@@ -405,9 +409,13 @@ function renderDem(dem){
 function renderHistorical(h){
   if(!h){return;}
   var nf=function(n){return Number(n||0).toLocaleString('en-US');};
+  var cb=h.combined||{};
+  var att=(cb.totalAttendance!=null)?cb.totalAttendance:h.totalAttendance;
+  var evc=(cb.totalEvents!=null)?cb.totalEvents:h.totalEvents;
+  var ven=(cb.distinctLocations!=null)?cb.distinctLocations:h.distinctLocations;
   document.getElementById('hs-stats').innerHTML=
-    '<b>'+nf(h.totalAttendance)+'</b> reached · <b>'+nf(h.totalEvents)+'</b> events · <b>'+
-    nf(h.distinctLocations)+'</b> venues · <b>'+nf(h.coachingClients)+'</b> coaching clients';
+    '<b>'+nf(att)+'</b> reached · <b>'+nf(evc)+'</b> events · <b>'+
+    nf(ven)+'</b> venues · <b>'+nf(h.coachingClients)+'</b> coaching clients';
   document.getElementById('hist-strip').style.display='flex';
 }
 

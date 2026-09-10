@@ -115,9 +115,9 @@ footer a{color:var(--gold);text-decoration:none}
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Rise Up Healing Collective · Lifetime Impact</div>
-    <h1>Six Years of Healing<em id="hero-reach">15,000+ Reached</em></h1>
+    <h1><span id="hero-years">Years of Healing</span><em id="hero-reach">15,000+ Reached</em></h1>
     <p class="lede">Since 2020, Yogaletics and Rise Up have carried movement, breathwork, restorative justice, and cultural immersion across Chicago's South and West sides — from park classes to school assemblies to international retreats.</p>
-    <div class="hero-meta" id="hero-span">140 events · 63 venues · 2020–2025</div>
+    <div class="hero-meta" id="hero-span">Loading impact data...</div>
   </div>
 </header>
 
@@ -130,7 +130,7 @@ footer a{color:var(--gold);text-decoration:none}
   <p class="sec-sub">Cumulative people reached, year over year. The line only goes one direction.</p>
   <div class="grid2">
     <div class="climb-card">
-      <h3>Cumulative Reach · 2020 → 2025</h3>
+      <h3 id="climb-head">Cumulative Reach</h3>
       <div class="cap">Every session, class, circle, and assembly, added together over time.</div>
       <div class="climb-wrap"><canvas id="climbChart"></canvas></div>
     </div>
@@ -188,7 +188,7 @@ footer a{color:var(--gold);text-decoration:none}
 <footer>
   <div class="wrap">
     <b>Rise Up Healing Collective</b> — Yogaletics · Rich Rootz · Belize Cultural Immersion<br>
-    Lifetime impact 2020–2025 · <span id="foot-clients"></span> coaching clients served 1:1<br>
+    Lifetime impact <span id="foot-span"></span> · <span id="foot-clients"></span> coaching clients served 1:1<br>
     Data source: Rise Up Volunteer Impact Tracker → HISTORICAL_IMPACT · <a href="https://riseuphc.org">riseuphc.org</a><br>
     <span id="foot-gen"></span>
   </div>
@@ -209,13 +209,27 @@ function render(h){
   var EVENTS = cb.totalEvents     != null ? cb.totalEvents     : h.totalEvents;
   var THISYR = new Date().getFullYear();
 
+  var SPAN = h.sinceYear+'\u2013'+THISYR;
+  var YEARS = THISYR - h.sinceYear + 1;
+  var WORDS = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten',
+               'Eleven','Twelve','Thirteen','Fourteen','Fifteen'];
+  var yWord = WORDS[YEARS] || String(YEARS);
+
+  // Venue count covers the ledger plus any current-cycle location not already in it.
+  var VENUES = (cb.distinctLocations != null) ? cb.distinctLocations : h.distinctLocations;
+
+  document.getElementById('hero-years').textContent = yWord+' Years of Healing';
   document.getElementById('hero-reach').textContent = nf(Math.floor(TOTAL/1000)*1000)+'+ Reached';
-  document.getElementById('hero-span').textContent = EVENTS+' events · '+h.distinctLocations+' venues · '+h.sinceYear+'–'+THISYR;
+  document.getElementById('hero-span').textContent = EVENTS+' events \u00b7 '+VENUES+' venues \u00b7 '+SPAN;
+  var ch=document.getElementById('climb-head');
+  if(ch) ch.textContent = 'Cumulative Reach \u00b7 '+h.sinceYear+' \u2192 '+THISYR;
+  var fs=document.getElementById('foot-span');
+  if(fs) fs.textContent = SPAN;
 
   var stats=[
     [nf(TOTAL),'People Reached'],
     [nf(EVENTS),'Events Held'],
-    [nf(h.distinctLocations),'Distinct Venues'],
+    [nf(VENUES),'Distinct Venues'],
     [nf(h.coachingClients),'Coaching Clients'],
     [(THISYR-h.sinceYear+1)+' yrs','Of Service']
   ];
@@ -235,7 +249,13 @@ function render(h){
   document.getElementById('reach-n').textContent=nf(h.reachAttendance);
   document.getElementById('reach-list').innerHTML=h.directVsReach.reachEvents.map(function(e){
     return '<li><span>'+e.name+' <span style="opacity:.6">('+e.year+')</span></span><b>'+nf(e.attendance)+'</b></li>';}).join('');
-  document.getElementById('reach-note').textContent=h.note;
+  var rn=document.getElementById('reach-note');
+  var ledger=h.directAttendance+h.reachAttendance;
+  rn.textContent = h.note + (TOTAL>ledger
+    ? ' This split covers the ' + nf(ledger) + ' in the lifetime ledger through ' +
+      (h.sinceYear+ (h.byYear.length-2)) + '; the ' + nf(TOTAL-ledger) +
+      ' reached in the current cycle are counted in the totals above but not yet classified.'
+    : '');
 
   var mx=Math.max.apply(null,h.topLocations.map(function(l){return l.attendance;}));
   document.getElementById('venuelist').innerHTML=h.topLocations.map(function(l){
