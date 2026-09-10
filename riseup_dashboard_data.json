@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T11:36:17.215Z",
+  "generatedAt": "2026-09-10T12:08:05.990Z",
   "settings": {
     "orgName": "Rise Up Healing Collective",
     "fiscalYear": "2026",
@@ -10,16 +10,40 @@
   },
   "summary": {
     "totalVolunteers": 2,
-    "totalHours": 14.5,
-    "totalVolValue": 609.5,
+    "totalHours": 70.5,
+    "totalVolValue": 3241.5,
     "totalInKind": 580,
     "cashGrants": 5000,
-    "totalProgramValue": 6189.5,
-    "leverageRatio": 1.2,
-    "totalParticipants": 540,
+    "totalProgramValue": 8821.5,
+    "leverageRatio": 1.8,
+    "totalParticipants": 960,
     "totalContacts": 7
   },
   "recentEvents": [
+    {
+      "id": "P010",
+      "name": "Court Watchers Wellness Session",
+      "date": "2026-08-28",
+      "area": "Rise Up",
+      "location": "Fine Arts Building Chicago",
+      "partners": "Chicago Votes",
+      "youthServed": 0,
+      "adults": 20,
+      "volHours": 2,
+      "totalValue": 94
+    },
+    {
+      "id": "P011",
+      "name": "Afro Yoga",
+      "date": "2026-08-23",
+      "area": "Beach Yoga",
+      "location": "Montrose Beach ",
+      "partners": "LOJ Fit",
+      "youthServed": 0,
+      "adults": 50,
+      "volHours": 3,
+      "totalValue": 141
+    },
     {
       "id": "P005",
       "name": "Belize 2026 — Pre-Departure Sessions",
@@ -33,6 +57,18 @@
       "totalValue": 5000
     },
     {
+      "id": "P009",
+      "name": "A Healing Hike",
+      "date": "2026-06-06",
+      "area": "Rise Up ",
+      "location": "Starved Rock State Park",
+      "partners": "Trinity Church of Chicago",
+      "youthServed": 35,
+      "adults": 0,
+      "volHours": 4,
+      "totalValue": 188
+    },
+    {
       "id": "P002",
       "name": "Race Against Gun Violence — June 4",
       "date": "2026-06-04",
@@ -43,55 +79,19 @@
       "adults": 300,
       "volHours": 0,
       "totalValue": 0
-    },
-    {
-      "id": "P001",
-      "name": "Obama Center — MBK Breathwork",
-      "date": "2026-05-15",
-      "area": "Community Wellness / MBK",
-      "location": "Obama Presidential Center, Hyde Park",
-      "partners": "My Brother's Keeper Alliance",
-      "youthServed": 85,
-      "adults": 40,
-      "volHours": 5,
-      "totalValue": 265
-    },
-    {
-      "id": "P004",
-      "name": "Rich Rootz Peace Circle — Englewood",
-      "date": "2026-05-01",
-      "area": "Restorative Justice / Peace Circles",
-      "location": "Englewood Community Site, Chicago",
-      "partners": "Rich Rootz / Local Partners",
-      "youthServed": 35,
-      "adults": 10,
-      "volHours": 3.5,
-      "totalValue": 314.5
-    },
-    {
-      "id": "P003",
-      "name": "Dominican University Wellness Program",
-      "date": "2026-04-01",
-      "area": "Yogaletics Programming",
-      "location": "Dominican University, River Forest",
-      "partners": "Dominican University",
-      "youthServed": 25,
-      "adults": 5,
-      "volHours": 6,
-      "totalValue": 610
     }
   ],
   "topVolunteers": [
     {
-      "name": "Sidney François-Friis",
-      "hours": 10.5,
-      "value": 421.5,
+      "name": "Emmaline Jones",
+      "hours": 45,
+      "value": 2115,
       "type": "Individual"
     },
     {
-      "name": "Emmaline Jones",
-      "hours": 4,
-      "value": 188,
+      "name": "Sidney François-Friis",
+      "hours": 25.5,
+      "value": 1126.5,
       "type": "Individual"
     }
   ],
@@ -339,12 +339,12 @@
   "riseUpMetrics": {
     "entity": "Rise Up (501c3)",
     "lifetime": {
-      "totalYouth": 180,
-      "totalAdults": 360,
+      "totalYouth": 258,
+      "totalAdults": 420,
       "schoolsEngaged": 0,
-      "totalEvents": 5,
-      "workshops": 5,
-      "totalHours": 14.5
+      "totalEvents": 10,
+      "workshops": 10,
+      "totalHours": 70.5
     },
     "byYear": [
       {
@@ -376,12 +376,12 @@
       },
       {
         "year": 2026,
-        "totalYouth": 180,
-        "totalAdults": 360,
+        "totalYouth": 228,
+        "totalAdults": 415,
         "schoolsEngaged": 0,
-        "totalEvents": 5,
-        "workshops": 5,
-        "totalHours": 14.5
+        "totalEvents": 9,
+        "workshops": 9,
+        "totalHours": 40.5
       }
     ],
     "dataQuality": {
